@@ -35,14 +35,17 @@ window.addEventListener("click", function (e) {
 // darkmode toggle
 const darkToggle = document.querySelector("#dark-toggle");
 const html = document.querySelector("html");
+const wavePath = document.getElementById("wave-path");
 
 darkToggle.addEventListener("click", function () {
   if (darkToggle.checked) {
     html.classList.add("dark");
     localStorage.theme = "dark";
+    wavePath.setAttribute("fill", "#0a0908");
   } else {
     html.classList.remove("dark");
     localStorage.theme = "light";
+    wavePath.setAttribute("fill", "#fff");
   }
 });
 
@@ -53,6 +56,8 @@ if (
     window.matchMedia("(prefers-color-scheme: dark)").matches)
 ) {
   darkToggle.checked = true;
+  wavePath.setAttribute("fill", "#0a0908");
 } else {
   darkToggle.checked = false;
+  wavePath.setAttribute("fill", "#fff");
 }
