@@ -41,11 +41,11 @@ darkToggle.addEventListener("click", function () {
   if (darkToggle.checked) {
     html.classList.add("dark");
     localStorage.theme = "dark";
-    wavePath.setAttribute("fill", "#0a0908");
+    wavePath.setAttribute("fill", "#1e293b ");
   } else {
     html.classList.remove("dark");
     localStorage.theme = "light";
-    wavePath.setAttribute("fill", "#fff");
+    wavePath.setAttribute("fill", "#f4f1de");
   }
 });
 
@@ -56,8 +56,8 @@ if (
     window.matchMedia("(prefers-color-scheme: dark)").matches)
 ) {
   darkToggle.checked = true;
-  wavePath.setAttribute("fill", "#0a0908");
+  wavePath.setAttribute("fill", "#1e293b ");
 } else {
   darkToggle.checked = false;
-  wavePath.setAttribute("fill", "#fff");
+  wavePath.setAttribute("fill", "#f4f1de");
 }
