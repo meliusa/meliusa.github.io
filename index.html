@@ -1,805 +1,1084 @@
 <!doctype html>
 <html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meliusa | Portfolio</title>
+    <link href="src/css/output.css" rel="stylesheet" />
+    <script>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meliusa | Portfolio</title>
-  <link href="src/css/output.css" rel="stylesheet" />
-  <script>
-    if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  </script>
-</head>
+  <body>
+    <!-- Header Start -->
+    <header
+      class="absolute top-0 left-0 z-10 flex items-center w-full bg-transparent"
+    >
+      <div class="container">
+        <div class="relative flex items-center justify-between">
+          <div class="px-4">
+            <a href="#home" class="block py-6 text-lg font-bold text-primary"
+              >Meliusa.</a
+            >
+          </div>
+          <div class="flex items-center px-4">
+            <button
+              id="hamburger"
+              name="hamburger"
+              type="button"
+              class="absolute block right-4 lg:hidden"
+            >
+              <span
+                class="transition duration-300 ease-in-out origin-top-left hamburger-line"
+              ></span>
+              <span
+                class="transition duration-300 ease-in-out hamburger-line"
+              ></span>
+              <span
+                class="transition duration-300 ease-in-out origin-bottom-left hamburger-line"
+              ></span>
+            </button>
 
-<body>
-  <!-- Header Start -->
-  <header class="absolute top-0 left-0 z-10 flex items-center w-full bg-transparent">
-    <div class="container">
-      <div class="relative flex items-center justify-between">
-        <div class="px-4">
-          <a href="#home" class="block py-6 text-lg font-bold text-primary">Meliusa.</a>
-        </div>
-        <div class="flex items-center px-4">
-          <button id="hamburger" name="hamburger" type="button" class="absolute block right-4 lg:hidden">
-            <span class="transition duration-300 ease-in-out origin-top-left hamburger-line"></span>
-            <span class="transition duration-300 ease-in-out hamburger-line"></span>
-            <span class="transition duration-300 ease-in-out origin-bottom-left hamburger-line"></span>
-          </button>
-
-          <nav id="nav-menu"
-            class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg dark:bg-dark dark:shadow-slate-500 lg:static lg:block lg:max-w-full lg:rounded-none lg:bg-transparent lg:shadow-none lg:dark:bg-transparent">
-            <ul class="block lg:flex">
-              <li class="group">
-                <a href="#home"
-                  class="flex py-2 mx-8 text-base text-dark group-hover:text-primary dark:text-white">Home</a>
-              </li>
-              <li class="group">
-                <a href="#about"
-                  class="flex py-2 mx-8 text-base text-dark group-hover:text-primary dark:text-white">About</a>
-              </li>
-              <li class="group">
-                <a href="#portfolio"
-                  class="flex py-2 mx-8 text-base text-dark group-hover:text-primary dark:text-white">Portfolios</a>
-              </li>
-              <li class="group">
-                <a href="#client"
-                  class="flex py-2 mx-8 text-base text-dark group-hover:text-primary dark:text-white">Clients</a>
-              </li>
-              <li class="group">
-                <a href="#resume"
-                  class="flex py-2 mx-8 text-base text-dark group-hover:text-primary dark:text-white">Resume</a>
-              </li>
-              <li class="group">
-                <a href="#education"
-                  class="flex py-2 mx-8 text-base text-dark group-hover:text-primary dark:text-white">Educations</a>
-              </li>
-              <li class="group">
-                <a href="#contact"
-                  class="flex py-2 mx-8 text-base text-dark group-hover:text-primary dark:text-white">Contacts</a>
-              </li>
-              <li class="flex items-center pl-8 mt-3 lg:mt-0">
-                <div class="flex">
-                  <span class="mr-2 text-sm text-slate-500">Light</span>
-                  <input type="checkbox" class="hidden" id="dark-toggle" />
-                  <label for="dark-toggle">
-                    <div class="flex items-center h-5 p-1 rounded-full cursor-pointer w-9 bg-slate-500">
-                      <div class="w-4 h-4 transition duration-300 ease-in-out bg-white rounded-full toggle-circle">
+            <nav
+              id="nav-menu"
+              class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg dark:bg-dark dark:shadow-slate-500 lg:static lg:block lg:max-w-full lg:rounded-none lg:bg-transparent lg:shadow-none lg:dark:bg-transparent"
+            >
+              <ul class="block lg:flex">
+                <li class="group">
+                  <a
+                    href="#home"
+                    class="flex py-2 mx-8 text-base text-dark group-hover:text-primary dark:text-white"
+                    >Home</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#about"
+                    class="flex py-2 mx-8 text-base text-dark group-hover:text-primary dark:text-white"
+                    >About</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#portfolio"
+                    class="flex py-2 mx-8 text-base text-dark group-hover:text-primary dark:text-white"
+                    >Portfolios</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#client"
+                    class="flex py-2 mx-8 text-base text-dark group-hover:text-primary dark:text-white"
+                    >Clients</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#certificate"
+                    class="flex py-2 mx-8 text-base text-dark group-hover:text-primary dark:text-white"
+                    >Certificates</a
+                  >
+                </li>
+                <li class="flex items-center pl-8 mt-3 lg:mt-0">
+                  <div class="flex">
+                    <span class="mr-2 text-sm text-slate-500">Light</span>
+                    <input type="checkbox" class="hidden" id="dark-toggle" />
+                    <label for="dark-toggle">
+                      <div
+                        class="flex items-center h-5 p-1 rounded-full cursor-pointer w-9 bg-slate-500"
+                      >
+                        <div
+                          class="w-4 h-4 transition duration-300 ease-in-out bg-white rounded-full toggle-circle"
+                        ></div>
                       </div>
-                    </div>
-                  </label>
-                  <span class="ml-2 text-sm text-slate-500">Dark</span>
-                </div>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </header>
-  <!-- Header End -->
-
-  <!-- Hero Section Start -->
-  <section id="home" class="pt-36 dark:bg-dark">
-    <div class="container">
-      <div class="flex flex-wrap">
-        <div class="self-center w-full px-4 lg:w-1/2">
-          <h1 class="text-base font-semibold text-primary md:text-xl">
-            Hi, Folks 👋🏿
-            <span class="block mt-1 text-4xl font-bold text-dark dark:text-white lg:text-5xl">Meliusa Nora
-              Hariyanti</span>
-          </h1>
-          <h2 class="mb-5 text-lg font-medium text-secondary lg:text-2xl">
-            I'm
-            <span class="text-dark dark:text-white" id="auto-text"></span>
-          </h2>
-          <p class="mb-10 font-medium leading-relaxed text-secondary">
-            I’m a <span class="font-bold text-dark dark:text-white">Fullstack Developer</span> from Indonesia with
-            experience in
-            <span class="font-bold text-dark dark:text-white">Web Development</span> and a passion for learning <span
-              class="font-bold text-dark dark:text-white">Mobile Development</span>.
-          </p>
-          <div class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
-            <a href="#"
-              class="px-8 py-3 text-base font-semibold text-center text-white transition duration-300 ease-in-out rounded-full bg-primary hover:opacity-80 hover:shadow-lg">
-              My Resume
-            </a>
-            <a href="#about"
-              class="px-8 py-3 text-base font-semibold text-center text-white transition duration-300 ease-in-out rounded-full bg-secondary hover:opacity-80 hover:shadow-lg">
-              See More About Me
-            </a>
-          </div>
-        </div>
-        <div class="self-end w-full px-4 mt-28 lg:w-1/2">
-          <div class="relative mt-10 lg:right-0 lg:mt-9">
-            <img src="src/img/meliusa.png" alt="Meliusa Nora Hariyanti" class="relative z-10 max-w-full mx-auto" />
-            <span class="absolute bottom-0 -translate-x-1/2 left-1/2 md:scale-125">
-              <svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <path fill="#e07a5f"
-                  d="M34.4,-47.3C45.7,-39.2,56.6,-30.6,65.3,-17.9C74.1,-5.2,80.7,11.6,76.1,24.5C71.6,37.3,55.9,46.3,41.3,54.4C26.8,62.5,13.4,69.8,-1.5,71.8C-16.3,73.8,-32.6,70.6,-46.5,62.3C-60.5,54,-72,40.5,-74.6,25.8C-77.2,11.1,-71,-5,-65.7,-21.4C-60.5,-37.9,-56.2,-54.7,-45.4,-62.9C-34.6,-71.1,-17.3,-70.7,-2.9,-66.8C11.6,-62.9,23.2,-55.4,34.4,-47.3Z"
-                  transform="translate(100 100) scale(1)" />
-              </svg>
-            </span>
+                    </label>
+                    <span class="ml-2 text-sm text-slate-500">Dark</span>
+                  </div>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </header>
+    <!-- Header End -->
 
-  <!-- Hero Section End -->
-
-  <!-- About Section Start -->
-  <section id="about" class="pb-32 pt-36 dark:bg-dark">
-    <div class="container">
-      <div class="flex flex-wrap">
-        <div class="w-full px-4 mb-10 lg:w-1/2">
-          <h4 class="mb-3 text-lg font-bold uppercase text-primary">
-            About Me
-          </h4>
-          <h3 class="mb-4 text-2xl font-semibold text-dark dark:text-white lg:text-3xl">
-            It's More About Me
-          </h3>
-          <p class="max-w-xl text-base font-medium text-justify text-secondary lg:text-lg"> I am a fresh graduate in
-            Information Technology from Politeknik Negeri Malang (State Polytechnic of Malang), with a strong background
-            in IT. My experience includes contributing to various software development projects. Currently, I am focused
-            on expanding my skills and expertise in both web and mobile development. I have hands-on experience with
-            TailwindCSS for frontend design and Laravel for backend development, and I am actively enhancing my
-            knowledge in mobile development. </p>
-        </div>
-        <div class="w-full px-4 mb-10 lg:w-1/2">
-          <h3 class="mb-4 text-2xl font-semibold text-dark dark:text-white lg:text-3xl">
-            Let's Connect!
-          </h3>
-          <div class="flex items-center">
-            <!-- linkedin -->
-            <a href="https://www.linkedin.com/in/meliusanorahariyanti/" target="_blank"
-              class="flex items-center justify-center mr-3 border rounded-full w-9 h-9 border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"><svg
-                role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <title>LinkedIn</title>
-                <path
-                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-              </svg>
-            </a>
-            <!-- linkedin -->
-            <a href="https://github.com/meliusa" target="_blank"
-              class="flex items-center justify-center mr-3 border rounded-full w-9 h-9 border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
-              <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <title>GitHub</title>
-                <path
-                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-              </svg>
-            </a>
-            <!-- linkedin -->
-            <a href="https://www.instagram.com/meliusa26/" target="_blank"
-              class="flex items-center justify-center mr-3 border rounded-full w-9 h-9 border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
-              <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <title>Instagram</title>
-                <path
-                  d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077" />
-              </svg>
-            </a>
-            <!-- facebook -->
-            <a href="https://www.facebook.com/meliusa/" target="_blank"
-              class="flex items-center justify-center mr-3 border rounded-full w-9 h-9 border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
-              <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <title>Facebook</title>
-                <path
-                  d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z" />
-              </svg>
-            </a>
+    <!-- Hero Section Start -->
+    <section id="home" class="pt-36 dark:bg-dark">
+      <div class="container">
+        <div class="flex flex-wrap">
+          <div class="self-center w-full px-4 lg:w-1/2">
+            <h1 class="text-base font-semibold text-primary md:text-xl">
+              Hi, Folks 👋🏿
+              <span
+                class="block mt-1 text-4xl font-bold text-dark dark:text-white lg:text-5xl"
+                >Meliusa Nora Hariyanti</span
+              >
+            </h1>
+            <h2 class="mb-5 text-lg font-medium text-secondary lg:text-2xl">
+              I'm
+              <span class="text-dark dark:text-white" id="auto-text"></span>
+            </h2>
+            <p class="mb-10 font-medium leading-relaxed text-secondary">
+              I’m a
+              <span class="font-bold text-dark dark:text-white"
+                >Fullstack Developer</span
+              >
+              from Indonesia with experience in
+              <span class="font-bold text-dark dark:text-white"
+                >Web Development</span
+              >
+              and a passion for learning
+              <span class="font-bold text-dark dark:text-white"
+                >Mobile Development</span
+              >.
+            </p>
+            <div
+              class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
+            >
+              <a
+                href="#"
+                class="px-8 py-3 text-base font-semibold text-center text-white transition duration-300 ease-in-out rounded-full bg-primary hover:opacity-80 hover:shadow-lg"
+              >
+                Get my CV
+              </a>
+            </div>
+          </div>
+          <div class="self-end w-full px-4 mt-28 lg:w-1/2">
+            <div class="relative mt-10 lg:right-0 lg:mt-9">
+              <img
+                src="src/img/meliusa.png"
+                alt="Meliusa Nora Hariyanti"
+                class="relative z-10 max-w-full mx-auto"
+              />
+              <span
+                class="absolute bottom-0 -translate-x-1/2 left-1/2 md:scale-125"
+              >
+                <svg
+                  width="400"
+                  height="400"
+                  viewBox="0 0 200 200"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill="#e07a5f"
+                    d="M34.4,-47.3C45.7,-39.2,56.6,-30.6,65.3,-17.9C74.1,-5.2,80.7,11.6,76.1,24.5C71.6,37.3,55.9,46.3,41.3,54.4C26.8,62.5,13.4,69.8,-1.5,71.8C-16.3,73.8,-32.6,70.6,-46.5,62.3C-60.5,54,-72,40.5,-74.6,25.8C-77.2,11.1,-71,-5,-65.7,-21.4C-60.5,-37.9,-56.2,-54.7,-45.4,-62.9C-34.6,-71.1,-17.3,-70.7,-2.9,-66.8C11.6,-62.9,23.2,-55.4,34.4,-47.3Z"
+                    transform="translate(100 100) scale(1)"
+                  />
+                </svg>
+              </span>
+            </div>
           </div>
         </div>
-        <div class="w-full px-4">
-          <div class="max-w-xl mx-auto mb-10 text-center">
-            <h3 class="mb-4 text-2xl font-semibold text-dark dark:text-white lg:text-3xl">
-              My Experiences
+      </div>
+    </section>
+
+    <!-- Hero Section End -->
+
+    <!-- About Section Start -->
+    <section id="about" class="pb-32 pt-36 dark:bg-dark">
+      <div class="container">
+        <div class="flex flex-wrap">
+          <div class="mx-auto mb-16 text-center">
+            <h4 class="mb-2 text-lg font-semibold uppercase text-primary">
+              About Me
+            </h4>
+            <h3
+              class="mb-4 text-2xl font-semibold text-dark dark:text-white lg:text-3xl"
+            >
+              Its More About Me
             </h3>
+            <p
+              class="text-base font-medium text-justify text-secondary lg:text-lg"
+            >
+              I am a fresh graduate in Information Technology from Politeknik
+              Negeri Malang (State Polytechnic of Malang), with a strong
+              background in IT. My experience includes contributing to various
+              software development projects. Currently, I am focused on
+              expanding my skills and expertise in both web and mobile
+              development. I have hands-on experience with TailwindCSS for
+              frontend design and Laravel for backend development, and I am
+              actively enhancing my knowledge in mobile development.
+            </p>
           </div>
-        </div>
-        <div class="grid w-full grid-cols-9 px-2 mx-auto mb-10 max-w-7xl">
-          <!-- Stack -->
-          <div class="w-full h-full col-span-4 ">
-            <div class="w-full h-full p-2 rounded-md bg-primary md:pl-4">
-              <h1 class="py-2 text-xl font-medium text-white">Fullstack Developer</h1>
-              <p class="py-2 text-base font-medium text-white">CV. Intermedia Technology Corp • Internship</p>
-              <p class="text-xs text-justify text-gray-100 sm:text-sm">• Led the development team at Intermedia
-                Technology Corp, overseeing software lifecycle from design to deployment. <br>
-                • Managed projects, addressed technical issues, and coordinated team efforts for successful project
-                outcomes.</p>
-              <p class="py-2 text-base font-medium text-white">2024 - 2024 (Six months)</p>
+          <div class="w-full px-4">
+            <div class="max-w-xl mx-auto mb-10 text-center">
+              <h3
+                class="mb-4 text-2xl font-semibold text-dark dark:text-white lg:text-3xl"
+              >
+                My Educations & Experiences
+              </h3>
             </div>
           </div>
-          <div class="relative flex items-center justify-center w-full h-full col-span-1">
-            <div class="w-1 h-full bg-secondary"></div>
-            <div class="absolute z-10 w-6 h-6 text-center text-white rounded-full bg-primary"></div>
-          </div>
-          <div class="w-full h-full col-span-4"></div>
+          <div class="grid w-full grid-cols-9 px-2 mx-auto mb-10 max-w-7xl">
+            <!-- Stack -->
+            <div class="w-full h-full col-span-4"></div>
+            <div
+              class="relative flex items-center justify-center w-full h-full col-span-1"
+            >
+              <div class="w-1 h-full bg-secondary"></div>
+              <div
+                class="absolute z-10 w-6 h-6 text-center text-white rounded-full bg-secondary"
+              ></div>
+            </div>
+            <div class="w-full h-full col-span-4">
+              <div class="w-full h-full p-2 rounded-md bg-secondary md:pl-4">
+                <h1 class="py-2 text-xl font-medium text-white">
+                  Graduated From Politeknik Negeri Malang (<span class="italic"
+                    >State Polytechnic of Malang</span
+                  >)
+                </h1>
+                <p class="py-2 text-base font-medium text-white">
+                  Applied Bachelor in Computer Science (S. Tr. Kom) •
+                  Informatics
+                </p>
+                <p class="text-xs text-justify text-gray-100 sm:text-sm">
+                  Activities and societies: During my studies at Politeknik
+                  Negeri Malang, I engaged in impactful projects and gained
+                  practical experience: <br />
+                  - Final Project: Selected as one of two students from the
+                  program to present at the 2024 University-Industry Synergy
+                  Expo through the Teaching Factory. <br />
+                  - Internship Experience: Completed an internship as a
+                  Fullstack Developer at CV Intermedia Technology Corporation,
+                  where I was entrusted with the role of Leader Developer.
+                </p>
+                <p class="py-2 text-base font-medium text-white">
+                  2020 - 2024 (4 yr)
+                </p>
+              </div>
+            </div>
 
+            <!-- Stack -->
+            <div class="w-full h-full col-span-4">
+              <div class="w-full h-full p-2 rounded-md bg-primary md:pl-4">
+                <h1 class="py-2 text-xl font-medium text-white">
+                  Fullstack Developer
+                </h1>
+                <p class="py-2 text-base font-medium text-white">
+                  CV. Intermedia Technology Corp • Internship
+                </p>
+                <p class="text-xs text-justify text-gray-100 sm:text-sm">
+                  • Led the development team at Intermedia Technology Corp,
+                  overseeing software lifecycle from design to deployment.
+                  <br />
+                  • Managed projects, addressed technical issues, and
+                  coordinated team efforts for successful project outcomes.
+                </p>
+                <p class="py-2 text-base font-medium text-white">
+                  2024 - 2024 (Six months)
+                </p>
+              </div>
+            </div>
+            <div
+              class="relative flex items-center justify-center w-full h-full col-span-1"
+            >
+              <div class="w-1 h-full bg-secondary"></div>
+              <div
+                class="absolute z-10 w-6 h-6 text-center text-white rounded-full bg-primary"
+              ></div>
+            </div>
+            <div class="w-full h-full col-span-4"></div>
 
-          <!-- Stack -->
-          <div class="w-full h-full col-span-4"></div>
-          <div class="relative flex items-center justify-center w-full h-full col-span-1">
-            <div class="w-1 h-full bg-secondary"></div>
-            <div class="absolute z-10 w-6 h-6 text-center text-white rounded-full bg-primary"></div>
-          </div>
-          <div class="w-full h-full col-span-4 ">
-            <div class="w-full h-full p-2 rounded-md bg-primary md:pl-4">
-              <h1 class="py-2 text-xl font-medium text-white">Player</h1>
-              <p class="py-2 text-base font-medium text-white">Lita Global • Freelance</p>
-              <p class="text-xs text-justify text-gray-100 sm:text-sm">• Delivered high-quality gaming services to
-                clients, focusing on optimizing user experience through system functionality analysis. <br>
-                • Actively engaged in community events, applying problem-solving skills and managing real-time feedback
-                similar to QA practices. <br>
-                • Maintained effective communication with clients and the team, ensuring smooth project execution in
-                development environments.</p>
-              <p class="py-2 text-base font-medium text-white">2023 - 2024 (1 yr)</p>
+            <!-- Stack -->
+            <div class="w-full h-full col-span-4"></div>
+            <div
+              class="relative flex items-center justify-center w-full h-full col-span-1"
+            >
+              <div class="w-1 h-full bg-secondary"></div>
+              <div
+                class="absolute z-10 w-6 h-6 text-center text-white rounded-full bg-primary"
+              ></div>
             </div>
-          </div>
+            <div class="w-full h-full col-span-4">
+              <div class="w-full h-full p-2 rounded-md bg-primary md:pl-4">
+                <h1 class="py-2 text-xl font-medium text-white">Player</h1>
+                <p class="py-2 text-base font-medium text-white">
+                  Lita Global • Freelance
+                </p>
+                <p class="text-xs text-justify text-gray-100 sm:text-sm">
+                  • Delivered high-quality gaming services to clients, focusing
+                  on optimizing user experience through system functionality
+                  analysis. <br />
+                  • Actively engaged in community events, applying
+                  problem-solving skills and managing real-time feedback similar
+                  to QA practices. <br />
+                  • Maintained effective communication with clients and the
+                  team, ensuring smooth project execution in development
+                  environments.
+                </p>
+                <p class="py-2 text-base font-medium text-white">
+                  2023 - 2024 (1 yr)
+                </p>
+              </div>
+            </div>
 
-          <!-- Stack -->
-          <div class="w-full h-full col-span-4 ">
-            <div class="w-full h-full p-2 rounded-md bg-primary md:pl-4">
-              <h1 class="py-2 text-xl font-medium text-white">Competition Participant</h1>
-              <p class="py-2 text-base font-medium text-white">Vocational Education Development Sector, East Java
-                Provincial Education Service</p>
-              <p class="text-xs text-justify text-gray-100 sm:text-sm">• Designed and implemented fullstack software
-                solutions to address business needs, focusing on front-end and back-end development. <br>
-                • Analyzed system requirements and ensured functional integrity while competing in the Lomba Kompetensi
-                Siswa (LKS) Provincial Level East Java competition. <br>
-                • Demonstrated strong problem-solving abilities, system analysis skills, and a deep understanding of
-                software quality assurance and business processes, securing fifth place.</p>
-              <p class="py-2 text-base font-medium text-white">2020 - 2020 (Four days)</p>
+            <!-- Stack -->
+            <div class="w-full h-full col-span-4">
+              <div class="w-full h-full p-2 rounded-md bg-primary md:pl-4">
+                <h1 class="py-2 text-xl font-medium text-white">
+                  Competition Participant
+                </h1>
+                <p class="py-2 text-base font-medium text-white">
+                  Vocational Education Development Sector, East Java Provincial
+                  Education Service
+                </p>
+                <p class="text-xs text-justify text-gray-100 sm:text-sm">
+                  • Designed and implemented fullstack software solutions to
+                  address business needs, focusing on front-end and back-end
+                  development. <br />
+                  • Analyzed system requirements and ensured functional
+                  integrity while competing in the Lomba Kompetensi Siswa (LKS)
+                  Provincial Level East Java competition. <br />
+                  • Demonstrated strong problem-solving abilities, system
+                  analysis skills, and a deep understanding of software quality
+                  assurance and business processes, securing fifth place.
+                </p>
+                <p class="py-2 text-base font-medium text-white">
+                  2020 - 2020 (Four days)
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="relative flex items-center justify-center w-full h-full col-span-1">
-            <div class="w-1 h-full bg-secondary"></div>
-            <div class="absolute z-10 w-6 h-6 text-center text-white rounded-full bg-primary"></div>
-          </div>
-          <div class="w-full h-full col-span-4"></div>
+            <div
+              class="relative flex items-center justify-center w-full h-full col-span-1"
+            >
+              <div class="w-1 h-full bg-secondary"></div>
+              <div
+                class="absolute z-10 w-6 h-6 text-center text-white rounded-full bg-primary"
+              ></div>
+            </div>
+            <div class="w-full h-full col-span-4"></div>
 
-          <!-- Stack -->
-          <div class="w-full h-full col-span-4"></div>
-          <div class="relative flex items-center justify-center w-full h-full col-span-1">
-            <div class="w-1 h-full bg-secondary"></div>
-            <div class="absolute z-10 w-6 h-6 text-center text-white rounded-full bg-primary"></div>
-          </div>
-          <div class="w-full h-full col-span-4 ">
-            <div class="w-full h-full p-2 rounded-md bg-primary md:pl-4">
-              <h1 class="py-2 text-xl font-medium text-white">Competition Participant</h1>
-              <p class="py-2 text-base font-medium text-white">Vocational Education Development Sector, East Java
-                Provincial Education Service</p>
-              <p class="text-xs text-justify text-gray-100 sm:text-sm">• Developed full-stack software solutions for
-                business needs, focusing on system analysis and user experience optimization. <br>
-                • Secured third place in the IT Software Solution for Business category at the Lomba Kompetensi Siswa
-                (LKS) Wilker 2 East Java competition. <br>
-                • Demonstrated strong problem-solving skills, delivering high-quality, scalable solutions with
-                comprehensive testing and quality assurance.</p>
-              <p class="py-2 text-base font-medium text-white">2019 - 2020 (Four days)</p>
+            <!-- Stack -->
+            <div class="w-full h-full col-span-4"></div>
+            <div
+              class="relative flex items-center justify-center w-full h-full col-span-1"
+            >
+              <div class="w-1 h-full bg-secondary"></div>
+              <div
+                class="absolute z-10 w-6 h-6 text-center text-white rounded-full bg-primary"
+              ></div>
             </div>
-          </div>
+            <div class="w-full h-full col-span-4">
+              <div class="w-full h-full p-2 rounded-md bg-primary md:pl-4">
+                <h1 class="py-2 text-xl font-medium text-white">
+                  Competition Participant
+                </h1>
+                <p class="py-2 text-base font-medium text-white">
+                  Vocational Education Development Sector, East Java Provincial
+                  Education Service
+                </p>
+                <p class="text-xs text-justify text-gray-100 sm:text-sm">
+                  • Developed full-stack software solutions for business needs,
+                  focusing on system analysis and user experience optimization.
+                  <br />
+                  • Secured third place in the IT Software Solution for Business
+                  category at the Lomba Kompetensi Siswa (LKS) Wilker 2 East
+                  Java competition. <br />
+                  • Demonstrated strong problem-solving skills, delivering
+                  high-quality, scalable solutions with comprehensive testing
+                  and quality assurance.
+                </p>
+                <p class="py-2 text-base font-medium text-white">
+                  2019 - 2020 (Four days)
+                </p>
+              </div>
+            </div>
 
-          <!-- Stack -->
-          <div class="w-full h-full col-span-4 ">
-            <div class="w-full h-full p-2 rounded-md bg-primary md:pl-4">
-              <h1 class="py-2 text-xl font-medium text-white">QC Sparepart Engine</h1>
-              <p class="py-2 text-base font-medium text-white">PT. Evercoss Technology Indonesia • Internship</p>
-              <p class="text-xs text-justify text-gray-100 sm:text-sm">• Conducted comprehensive quality assurance and
-                testing for software applications, ensuring adherence to project specifications. <br>
-                • Obtained Level 1 Mobile Device Service Competency Certificate, showcasing proficiency in system
-                diagnostics and maintenance. <br>
-                • Maintained high product quality through detailed inspections and testing protocols at PT. Evercoss
-                Technology Indonesia.</p>
-              <p class="py-2 text-base font-medium text-white">2018 - 2019 (Six months)</p>
+            <!-- Stack -->
+            <div class="w-full h-full col-span-4">
+              <div class="w-full h-full p-2 rounded-md bg-secondary md:pl-4">
+                <h1 class="py-2 text-xl font-medium text-white">
+                  Graduated From State Vocational High School 1 of Probolinggo
+                  City
+                </h1>
+                <p class="py-2 text-base font-medium text-white">
+                  Software Engineering
+                </p>
+                <p class="text-xs text-justify text-gray-100 sm:text-sm">
+                  Activities and societies: During my time at State Vocational
+                  High School 1 of Probolinggo City, I actively engaged in
+                  various activities and achieved notable accomplishments:
+                  <br />
+                  - Top Ranking Student: Achieved top rank in class for six
+                  consecutive semesters. <br />
+                  - Competitions: Nominated 3rd place in IT Software Solution
+                  for Business at the Vocational Student Competitions (LKS) for
+                  Wilker 2 East Java and advanced to the provincial level.
+                </p>
+                <p class="py-2 text-base font-medium text-white">
+                  2018 - 2020 (3 yr)
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="relative flex items-center justify-center w-full h-full col-span-1">
-            <div class="w-1 h-full bg-secondary"></div>
-            <div class="absolute z-10 w-6 h-6 text-center text-white rounded-full bg-primary"></div>
-          </div>
-          <div class="w-full h-full col-span-4"></div>
+            <div
+              class="relative flex items-center justify-center w-full h-full col-span-1"
+            >
+              <div class="w-1 h-full bg-secondary"></div>
+              <div
+                class="absolute z-10 w-6 h-6 text-center text-white rounded-full bg-secondary"
+              ></div>
+            </div>
+            <div class="w-full h-full col-span-4"></div>
 
-          <!-- Stack -->
-          <div class="w-full h-full col-span-4"></div>
-          <div class="relative flex items-center justify-center w-full h-full col-span-1">
-            <div class="w-1 h-full bg-secondary"></div>
-            <div class="absolute z-10 w-6 h-6 text-center text-white rounded-full bg-primary"></div>
+            <!-- Stack -->
+            <div class="w-full h-full col-span-4"></div>
+            <div
+              class="relative flex items-center justify-center w-full h-full col-span-1"
+            >
+              <div class="w-1 h-full bg-secondary"></div>
+              <div
+                class="absolute z-10 w-6 h-6 text-center text-white rounded-full bg-primary"
+              ></div>
+            </div>
+            <div class="w-full h-full col-span-4">
+              <div class="w-full h-full p-2 rounded-md bg-primary md:pl-4">
+                <h1 class="py-2 text-xl font-medium text-white">
+                  QC Sparepart Engine
+                </h1>
+                <p class="py-2 text-base font-medium text-white">
+                  PT. Evercoss Technology Indonesia • Internship
+                </p>
+                <p class="text-xs text-justify text-gray-100 sm:text-sm">
+                  • Conducted comprehensive quality assurance and testing for
+                  software applications, ensuring adherence to project
+                  specifications. <br />
+                  • Obtained Level 1 Mobile Device Service Competency
+                  Certificate, showcasing proficiency in system diagnostics and
+                  maintenance. <br />
+                  • Maintained high product quality through detailed inspections
+                  and testing protocols at PT. Evercoss Technology Indonesia.
+                </p>
+                <p class="py-2 text-base font-medium text-white">
+                  2018 - 2019 (Six months)
+                </p>
+              </div>
+            </div>
+
+            <!-- Stack -->
+            <div class="w-full h-full col-span-4">
+              <div class="w-full h-full p-2 rounded-md bg-primary md:pl-4">
+                <h1 class="py-2 text-xl font-medium text-white">Operator</h1>
+                <p class="py-2 text-base font-medium text-white">
+                  Zeus Net Probolinggo • Full-time
+                </p>
+                <p class="text-xs text-justify text-gray-100 sm:text-sm">
+                  • Managed daily operational tasks at Zeus Net, optimizing
+                  computer systems for seamless internet service. <br />
+                  • Provided technical support, resolving complex issues to
+                  enhance problem-solving skills and customer service
+                  proficiency. <br />
+                  • Gained in-depth knowledge of network management and system
+                  administration, contributing to effective system performance.
+                </p>
+                <p class="py-2 text-base font-medium text-white">
+                  2014 - 2015 (1 yr)
+                </p>
+              </div>
+            </div>
+            <div
+              class="relative flex items-center justify-center w-full h-full col-span-1"
+            >
+              <div class="w-1 h-full bg-secondary"></div>
+              <div
+                class="absolute z-10 w-6 h-6 text-center text-white rounded-full bg-primary"
+              ></div>
+            </div>
+            <div class="w-full h-full col-span-4"></div>
           </div>
-          <div class="w-full h-full col-span-4 ">
-            <div class="w-full h-full p-2 rounded-md bg-primary md:pl-4">
-              <h1 class="py-2 text-xl font-medium text-white">Operator</h1>
-              <p class="py-2 text-base font-medium text-white">Zeus Net Probolinggo • Full-time</p>
-              <p class="text-xs text-justify text-gray-100 sm:text-sm">• Managed daily operational tasks at Zeus Net,
-                optimizing computer systems for seamless internet service. <br>
-                • Provided technical support, resolving complex issues to enhance problem-solving skills and customer
-                service proficiency. <br>
-                • Gained in-depth knowledge of network management and system administration, contributing to effective
-                system performance.</p>
-              <p class="py-2 text-base font-medium text-white">2014 - 2015 (1 yr)</p>
+          <div class="w-full px-4">
+            <div class="max-w-xl mx-auto mb-10 text-center">
+              <h3
+                class="mb-4 text-2xl font-semibold text-dark dark:text-white lg:text-3xl"
+              >
+                Tech Stack That I Use
+              </h3>
             </div>
-          </div>
-        </div>
-        <div class="w-full px-4">
-          <div class="max-w-xl mx-auto mb-10 text-center">
-            <h3 class="mb-4 text-2xl font-semibold text-dark dark:text-white lg:text-3xl">
-              Tech Stack That I Use
-            </h3>
-          </div>
-          <div class="grid grid-cols-3 gap-2 md:grid-cols-4 lg:grid-cols-6">
-            <div class="flex flex-col items-center justify-center w-24 h-24 bg-white rounded-md shadow-md">
-              <img src="src/img/tech/js.webp" alt="JavaScript" class="mx-auto w-14 h-14">
-              <p class="text-base">JavaScript</p>
-            </div>
-            <div class="flex flex-col items-center justify-center w-24 h-24 bg-white rounded-md shadow-md">
-              <img src="src/img/tech/php.png" alt="PHP" class="mx-auto w-14 h-14">
-              <p class="text-base">PHP</p>
-            </div>
-            <div class="flex flex-col items-center justify-center w-24 h-24 bg-white rounded-md shadow-md">
-              <img src="src/img/tech/laravel.png" alt="Laravel" class="mx-auto w-14 h-14">
-              <p class="text-base">Laravel</p>
-            </div>
-            <div class="flex flex-col items-center justify-center w-24 h-24 bg-white rounded-md shadow-md">
-              <img src="src/img/tech/nodejs.jpg" alt="NodeJS" class="mx-auto w-14 h-14">
-              <p class="text-base">NodeJS</p>
-            </div>
-            <div class="flex flex-col items-center justify-center w-24 h-24 bg-white rounded-md shadow-md">
-              <img src="src/img/tech/tailwindcss.png" alt="TailwindCSS" class="mx-auto w-14 h-14">
-              <p class="text-base">TailwindCSS</p>
-            </div>
-            <div class="flex flex-col items-center justify-center w-24 h-24 bg-white rounded-md shadow-md">
-              <img src="src/img/tech/mysql.png" alt="MySQL" class="mx-auto w-14 h-14">
-              <p class="text-base">MySQL</p>
-            </div>
-            <div class="flex flex-col items-center justify-center w-24 h-24 bg-white rounded-md shadow-md">
-              <img src="src/img/tech/postgresql.png" alt="PostgreSQL" class="mx-auto w-14 h-14">
-              <p class="text-base">PostgreSQL</p>
-            </div>
-            <div class="flex flex-col items-center justify-center w-24 h-24 bg-white rounded-md shadow-md">
-              <img src="src/img/tech/python.svg" alt="Python" class="mx-auto w-14 h-14">
-              <p class="text-base">Python</p>
-            </div>
-            <div class="flex flex-col items-center justify-center w-24 h-24 bg-white rounded-md shadow-md">
-              <img src="src/img/tech/java.webp" alt="Java" class="mx-auto w-14 h-14">
-              <p class="text-base">Java</p>
-            </div>
-            <div class="flex flex-col items-center justify-center w-24 h-24 bg-white rounded-md shadow-md">
-              <img src="src/img/tech/flutter.png" alt="Flutter" class="mx-auto w-14 h-14">
-              <p class="text-base">Flutter</p>
-            </div>
-            <div class="flex flex-col items-center justify-center w-24 h-24 bg-white rounded-md shadow-md">
-              <img src="src/img/tech/vb.png" alt="VB" class="mx-auto w-14 h-14">
-              <p class="text-base">VB</p>
-            </div>
-            <div class="flex flex-col items-center justify-center w-24 h-24 bg-white rounded-md shadow-md">
-              <img src="src/img/tech/sqlite.png" alt="SQLite" class="mx-auto w-14 h-14">
-              <p class="text-base">SQLite</p>
-            </div>
-            <div class="flex flex-col items-center justify-center w-24 h-24 bg-white rounded-md shadow-md">
-              <img src="src/img/tech/trello.png" alt="Trello" class="mx-auto w-14 h-14">
-              <p class="text-base">Trello</p>
-            </div>
-            <div class="flex flex-col items-center justify-center w-24 h-24 bg-white rounded-md shadow-md">
-              <img src="src/img/tech/jira.jpg" alt="Jira" class="mx-auto w-14 h-14">
-              <p class="text-base">Jira</p>
-            </div>
-            <div class="flex flex-col items-center justify-center w-24 h-24 bg-white rounded-md shadow-md">
-              <img src="src/img/tech/cloud.jpg" alt="Cloud" class="mx-auto w-14 h-14">
-              <p class="text-base">Cloud</p>
-            </div>
-            <div class="flex flex-col items-center justify-center w-24 h-24 bg-white rounded-md shadow-md">
-              <img src="src/img/tech/git.png" alt="Git" class="mx-auto w-14 h-14">
-              <p class="text-base">Git</p>
+            <div class="grid grid-cols-3 gap-2 md:grid-cols-4 lg:grid-cols-6">
+              <div
+                class="flex flex-col items-center justify-center w-24 h-24 mb-4 bg-white rounded-md shadow-md"
+              >
+                <img
+                  src="src/img/tech/js.webp"
+                  alt="JavaScript"
+                  class="mx-auto w-14 h-14"
+                />
+                <p class="text-base">JavaScript</p>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center w-24 h-24 mb-4 bg-white rounded-md shadow-md"
+              >
+                <img
+                  src="src/img/tech/php.png"
+                  alt="PHP"
+                  class="mx-auto w-14 h-14"
+                />
+                <p class="text-base">PHP</p>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center w-24 h-24 mb-4 bg-white rounded-md shadow-md"
+              >
+                <img
+                  src="src/img/tech/laravel.png"
+                  alt="Laravel"
+                  class="mx-auto w-14 h-14"
+                />
+                <p class="text-base">Laravel</p>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center w-24 h-24 mb-4 bg-white rounded-md shadow-md"
+              >
+                <img
+                  src="src/img/tech/nodejs.jpg"
+                  alt="NodeJS"
+                  class="mx-auto w-14 h-14"
+                />
+                <p class="text-base">NodeJS</p>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center w-24 h-24 mb-4 bg-white rounded-md shadow-md"
+              >
+                <img
+                  src="src/img/tech/tailwindcss.png"
+                  alt="TailwindCSS"
+                  class="mx-auto w-14 h-14"
+                />
+                <p class="text-base">TailwindCSS</p>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center w-24 h-24 mb-4 bg-white rounded-md shadow-md"
+              >
+                <img
+                  src="src/img/tech/mysql.png"
+                  alt="MySQL"
+                  class="mx-auto w-14 h-14"
+                />
+                <p class="text-base">MySQL</p>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center w-24 h-24 mb-4 bg-white rounded-md shadow-md"
+              >
+                <img
+                  src="src/img/tech/postgresql.png"
+                  alt="PostgreSQL"
+                  class="mx-auto w-14 h-14"
+                />
+                <p class="text-base">PostgreSQL</p>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center w-24 h-24 mb-4 bg-white rounded-md shadow-md"
+              >
+                <img
+                  src="src/img/tech/python.svg"
+                  alt="Python"
+                  class="mx-auto w-14 h-14"
+                />
+                <p class="text-base">Python</p>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center w-24 h-24 mb-4 bg-white rounded-md shadow-md"
+              >
+                <img
+                  src="src/img/tech/java.webp"
+                  alt="Java"
+                  class="mx-auto w-14 h-14"
+                />
+                <p class="text-base">Java</p>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center w-24 h-24 mb-4 bg-white rounded-md shadow-md"
+              >
+                <img
+                  src="src/img/tech/flutter.png"
+                  alt="Flutter"
+                  class="mx-auto w-14 h-14"
+                />
+                <p class="text-base">Flutter</p>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center w-24 h-24 mb-4 bg-white rounded-md shadow-md"
+              >
+                <img
+                  src="src/img/tech/vb.png"
+                  alt="VB"
+                  class="mx-auto w-14 h-14"
+                />
+                <p class="text-base">VB</p>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center w-24 h-24 mb-4 bg-white rounded-md shadow-md"
+              >
+                <img
+                  src="src/img/tech/sqlite.png"
+                  alt="SQLite"
+                  class="mx-auto w-14 h-14"
+                />
+                <p class="text-base">SQLite</p>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center w-24 h-24 mb-4 bg-white rounded-md shadow-md"
+              >
+                <img
+                  src="src/img/tech/trello.png"
+                  alt="Trello"
+                  class="mx-auto w-14 h-14"
+                />
+                <p class="text-base">Trello</p>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center w-24 h-24 mb-4 bg-white rounded-md shadow-md"
+              >
+                <img
+                  src="src/img/tech/jira.jpg"
+                  alt="Jira"
+                  class="mx-auto w-14 h-14"
+                />
+                <p class="text-base">Jira</p>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center w-24 h-24 mb-4 bg-white rounded-md shadow-md"
+              >
+                <img
+                  src="src/img/tech/cloud.jpg"
+                  alt="Cloud"
+                  class="mx-auto w-14 h-14"
+                />
+                <p class="text-base">Cloud</p>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center w-24 h-24 mb-4 bg-white rounded-md shadow-md"
+              >
+                <img
+                  src="src/img/tech/git.png"
+                  alt="Git"
+                  class="mx-auto w-14 h-14"
+                />
+                <p class="text-base">Git</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- About Section End -->
+    </section>
+    <!-- About Section End -->
 
-  <!-- Portfolio Section Start -->
-  <section id="portfolio" class="pb-16 bg-light_yellow pt-36 dark:bg-slate-800">
-    <div class="container">
-      <div class="w-full px-4">
-        <div class="max-w-xl mx-auto mb-16 text-center">
-          <h4 class="mb-2 text-lg font-semibold uppercase text-primary">
-            Portfolios
-          </h4>
-          <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl lg:text-5xl">
-            Latest Projects
-          </h2>
-          <p class="font-medium text-md text-secondary md:text-lg">
-            This is the most recent addition to my portfolios.
-          </p>
-        </div>
-      </div>
-
-      <div class="flex flex-wrap justify-center w-full px-4 xl:mx-auto xl:w-10/12">
-        <div class="p-4 mb-12 md:w-1/2 lg:w-1/2">
-          <div class="overflow-hidden rounded-md shadow-md">
-            <img src="src/img/portfolio/4.png" alt="Portfolio" class="object-cover w-full h-64" />
-          </div>
-          <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white">
-            Portfolio Website
-          </h3>
-          <p class="text-base font-medium text-secondary line-clamp-3">
-            This portfolio website showcases a collection of my work and projects, designed using Tailwind CSS. With its
-            responsive and modern design, the website highlights my skills and accomplishments in a visually appealing
-            way. Explore my projects to see the range of my capabilities.
-          </p>
-        </div>
-
-        <div class="p-4 mb-12 md:w-1/2 lg:w-1/2">
-          <div class="overflow-hidden rounded-md shadow-md">
-            <img src="src/img/portfolio/3.png" alt="Portfolio" class="object-cover w-full h-64" />
-          </div>
-          <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white">
-            Slider with Crazy Effect Using HTML, CSS, Javascript
-          </h3>
-          <p class="text-base font-medium text-secondary line-clamp-3">
-            This project features an image slider with smooth and eye-catching transition effects, built using HTML,
-            CSS, and JavaScript. The visual effects applied enhance the user experience, making it ideal for photo
-            galleries.
-          </p>
-        </div>
-
-        <div class="p-4 mb-12 md:w-1/2 lg:w-1/2">
-          <div class="overflow-hidden rounded-md shadow-md">
-            <img src="src/img/portfolio/2.png" alt="Portfolio" class="object-cover w-full h-64" />
-          </div>
-          <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white">
-            Human Resource Management System (HRMS) PT. Wijaya Kusumo
-          </h3>
-          <p class="text-base font-medium text-secondary line-clamp-3">
-            This project involves the development of a comprehensive Human Resource Management System (HRMS) for PT.
-            Wijaya Kusumo. Built with Laravel and MySQL, it streamlines HR processes, enhancing efficiency in managing
-            human resources.
-          </p>
-        </div>
-
-        <div class="p-4 mb-12 md:w-1/2 lg:w-1/2">
-          <div class="overflow-hidden rounded-md shadow-md">
-            <img src="src/img/portfolio/1.png" alt="Portfolio" class="object-cover w-full h-64" />
-          </div>
-          <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white">
-            Website TopUp-In
-          </h3>
-          <p class="text-base font-medium text-secondary line-clamp-3">
-            The "TopUp-In" website is a dynamic platform designed for seamless top-up and payment transactions.
-            Developed using Laravel, it offers users an intuitive interface to manage their account balances and make
-            secure top-ups.
-          </p>
-        </div>
-      </div>
-
-      <!-- Additional Information Section -->
-      <div class="w-full text-center">
-        <h4 class="mb-2 text-lg font-semibold text-primary">
-          <a href="#" class=" text-primary hover:underline">View More Projects</a>
-          </h3>
-      </div>
-    </div>
-  </section>
-  <!-- Portfolio Section End -->
-
-  <!-- Clients Section Start -->
-  <section id="client" class="pb-32 bg-dark pt-36 dark:bg-dark_orange">
-    <div class="container">
-      <div class="w-full px-4">
-        <div class="mx-auto mb-16 text-center">
-          <h4 class="mb-2 text-lg font-semibold uppercase text-primary dark:text-white">
-            Clients
-          </h4>
-          <h2 class="mb-4 text-3xl font-bold text-white dark:text-dark sm:text-4xl lg:text-5xl">
-            Partners I’ve Worked With
-          </h2>
-          <p class="font-medium text-md text-secondary md:text-lg">
-            A big thanks to
-          </p>
-        </div>
-      </div>
-
-      <div class="w-full px-4">
-        <div class="flex flex-wrap items-center justify-center">
-          <a href="https://intermediatech.id/profil-perusahaan/"
-            class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
-            <img src="src/img/clients/1.png" alt="Client" />
-          </a>
-          <a href="https://wijayakusumo.com/"
-            class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
-            <img src="src/img/clients/2.png" alt="Client 1" />
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Clients Section End -->
-
-  <!-- Blog Section Start -->
-  <!-- <section id="blog" class="pb-32 bg-slate-100 pt-36 dark:bg-dark">
+    <!-- Portfolio Section Start -->
+    <section id="portfolio" class="pb-16 bg-[#f4f1de] pt-36 dark:bg-slate-800">
       <div class="container">
         <div class="w-full px-4">
           <div class="max-w-xl mx-auto mb-16 text-center">
             <h4 class="mb-2 text-lg font-semibold uppercase text-primary">
-              Blogs
+              Portfolios
             </h4>
             <h2
               class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl lg:text-5xl"
             >
-              Latest Posts
+              Latest Projects
             </h2>
             <p class="font-medium text-md text-secondary md:text-lg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
-              quisquam perspiciatis blanditiis dolores?
+              This is the most recent addition to my portfolios.
             </p>
           </div>
         </div>
 
-        <div class="flex flex-wrap">
-          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div
-              class="mb-10 overflow-hidden bg-white shadow-lg rounded-xl dark:bg-slate-800"
-            >
+        <div
+          class="flex flex-wrap justify-center w-full px-4 xl:mx-auto xl:w-10/12"
+        >
+          <div class="p-4 mb-12 md:w-1/2 lg:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
               <img
-                src="src/img/clients/1.png"
-                alt="Programming"
-                class="w-full"
+                src="src/img/portfolio/4.png"
+                alt="Portfolio"
+                class="object-cover w-full h-64"
               />
-              <div class="px-6 py-8">
-                <h3>
-                  <a
-                    href="#"
-                    class="block mb-3 text-xl font-semibold truncate text-dark hover:text-primary dark:text-white"
-                    >Tips Belajar Programming</a
-                  >
-                </h3>
-                <p class="mb-6 text-base font-medium text-secondary">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Placeat officia beatae quisquam?
-                </p>
-                <a
-                  href="#"
-                  class="px-4 py-2 text-sm font-medium text-white rounded-lg bg-primary hover:opacity-80"
-                  >Baca Selengkapnya</a
+            </div>
+            <h3
+              class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white"
+            >
+              Portfolio Website
+            </h3>
+            <p class="text-base font-medium text-secondary line-clamp-3">
+              This portfolio website showcases a collection of my work and
+              projects, designed using Tailwind CSS. With its responsive and
+              modern design, the website highlights my skills and
+              accomplishments in a visually appealing way. Explore my projects
+              to see the range of my capabilities.
+            </p>
+          </div>
+
+          <div class="p-4 mb-12 md:w-1/2 lg:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
+              <img
+                src="src/img/portfolio/3.png"
+                alt="Portfolio"
+                class="object-cover w-full h-64"
+              />
+            </div>
+            <h3
+              class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white"
+            >
+              Slider with Crazy Effect Using HTML, CSS, Javascript
+            </h3>
+            <p class="text-base font-medium text-secondary line-clamp-3">
+              This project features an image slider with smooth and eye-catching
+              transition effects, built using HTML, CSS, and JavaScript. The
+              visual effects applied enhance the user experience, making it
+              ideal for photo galleries.
+            </p>
+          </div>
+
+          <div class="p-4 mb-12 md:w-1/2 lg:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
+              <img
+                src="src/img/portfolio/2.png"
+                alt="Portfolio"
+                class="object-cover w-full h-64"
+              />
+            </div>
+            <h3
+              class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white"
+            >
+              Human Resource Management System (HRMS) PT. Wijaya Kusumo
+            </h3>
+            <p class="text-base font-medium text-secondary line-clamp-3">
+              This project involves the development of a comprehensive Human
+              Resource Management System (HRMS) for PT. Wijaya Kusumo. Built
+              with Laravel and MySQL, it streamlines HR processes, enhancing
+              efficiency in managing human resources.
+            </p>
+          </div>
+
+          <div class="p-4 mb-12 md:w-1/2 lg:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
+              <img
+                src="src/img/portfolio/1.png"
+                alt="Portfolio"
+                class="object-cover w-full h-64"
+              />
+            </div>
+            <h3
+              class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white"
+            >
+              Website TopUp-In
+            </h3>
+            <p class="text-base font-medium text-secondary line-clamp-3">
+              The "TopUp-In" website is a dynamic platform designed for seamless
+              top-up and payment transactions. Developed using Laravel, it
+              offers users an intuitive interface to manage their account
+              balances and make secure top-ups.
+            </p>
+          </div>
+        </div>
+        <!-- Additional Information Section -->
+        <!-- <div class="w-full text-center">
+          <h4 class="mb-2 text-lg font-semibold text-primary">
+            <a href="#" class="relative text-primary hover:underline"
+              >View More Projects</a
+            >
+          </h4>
+        </div> -->
+      </div>
+    </section>
+    <!-- Portfolio Section End -->
+
+    <!-- Clients Section Start -->
+    <section id="client" class="pb-32 bg-dark pt-36 dark:bg-[#293241]">
+      <div class="container">
+        <div class="w-full px-4">
+          <div class="mx-auto mb-16 text-center">
+            <h4
+              class="mb-2 text-lg font-semibold uppercase text-primary dark:text-primary"
+            >
+              Clients
+            </h4>
+            <h2
+              class="mb-4 text-3xl font-bold text-white dark:text-white sm:text-4xl lg:text-5xl"
+            >
+              Partners I’ve Worked With
+            </h2>
+            <p class="font-medium text-md text-secondary md:text-lg">
+              A big thanks to
+            </p>
+          </div>
+        </div>
+
+        <div class="w-full px-4 overflow-hidden">
+          <div
+            class="flex items-center justify-start gap-8 whitespace-nowrap animate-scroll"
+          >
+            <a
+              href="https://intermediatech.id/profil-perusahaan/"
+              class="inline-block max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0"
+            >
+              <img src="src/img/clients/1.png" alt="Client" />
+            </a>
+            <a
+              href="https://wijayakusumo.com/"
+              class="inline-block max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0"
+            >
+              <img src="src/img/clients/2.png" alt="Client 1" />
+            </a>
+            <!-- Tambahkan lebih banyak logo jika perlu -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Clients Section End -->
+
+    <!-- Certificate Section Start -->
+    <section id="certificate" class="pb-32 pt-36 dark:bg-slate-800">
+      <div class="container">
+        <div class="w-full px-4">
+          <div class="max-w-xl mx-auto mb-16 text-center">
+            <h4 class="mb-2 text-lg font-semibold uppercase text-primary">
+              Certificates
+            </h4>
+            <h2
+              class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl lg:text-5xl"
+            >
+              My Certificates
+            </h2>
+            <p class="font-medium text-md text-secondary md:text-lg">
+              The awards I have received.
+            </p>
+          </div>
+
+          <!-- Filter Buttons -->
+          <div class="mb-8 text-center">
+            <button
+              class="px-4 py-2 mx-2 text-white transition rounded bg-primary hover:bg-primary-dark"
+              onclick="filterGallery('all')"
+            >
+              All
+            </button>
+            <button
+              class="px-4 py-2 mx-2 text-white transition rounded bg-primary hover:bg-primary-dark"
+              onclick="filterGallery('category1')"
+            >
+              IT
+            </button>
+            <button
+              class="px-4 py-2 mx-2 text-white transition rounded bg-primary hover:bg-primary-dark"
+              onclick="filterGallery('category2')"
+            >
+              Non IT
+            </button>
+          </div>
+
+          <!-- Gallery -->
+          <!-- Gallery Item 1 (IT) -->
+          <div
+            class="filter-item filter-category1 px-8 py-10 bg-white dark:bg-[#3d405b] rounded-md shadow-md mb-4"
+          >
+            <h3 class="mb-3 text-xl font-semibold text-primary">
+              IT Certificate
+            </h3>
+            <p class="mb-4 text-base font-medium text-secondary line-clamp-3">
+              This is an IT related certificate.
+            </p>
+            <div class="relative">
+              <a href="#"
+                ><h6
+                  class="relative z-10 font-semibold text-dark text-md dark:text-white"
                 >
-              </div>
+                  View
+                </h6></a
+              >
+              <span
+                class="absolute left-0 z-0 w-6 h-1 bg-[#f2cc8f] bottom-1"
+              ></span>
             </div>
           </div>
-          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div
-              class="mb-10 overflow-hidden bg-white shadow-lg rounded-xl dark:bg-slate-800"
-            >
-              <img
-                src="src/img/clients/1.png"
-                alt="Mechanical Keyboard"
-                class="w-full"
-              />
-              <div class="px-6 py-8">
-                <h3>
-                  <a
-                    href="#"
-                    class="block mb-3 text-xl font-semibold truncate text-dark hover:text-primary dark:text-white"
-                    >Review Keyboard GMMK Pro</a
-                  >
-                </h3>
-                <p class="mb-6 text-base font-medium text-secondary">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi
-                  facilis illum in.
-                </p>
-                <a
-                  href="#"
-                  class="px-4 py-2 text-sm font-medium text-white rounded-lg bg-primary hover:opacity-80"
-                  >Baca Selengkapnya</a
+
+          <!-- Gallery Item 2 (Non IT) -->
+          <div
+            class="filter-item filter-category2 px-8 py-10 bg-white dark:bg-[#3d405b] rounded-md shadow-md mb-4"
+          >
+            <h3 class="mb-3 text-xl font-semibold text-primary">
+              Non IT Certificate
+            </h3>
+            <p class="mb-4 text-base font-medium text-secondary line-clamp-3">
+              This is a Non IT related certificate.
+            </p>
+            <div class="relative">
+              <a href="#"
+                ><h6
+                  class="relative z-10 font-semibold text-dark text-md dark:text-white"
                 >
-              </div>
-            </div>
-          </div>
-          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-            <div
-              class="mb-10 overflow-hidden bg-white shadow-lg rounded-xl dark:bg-slate-800"
-            >
-              <img src="src/img/clients/1.png" alt="Coffee" class="w-full" />
-              <div class="px-6 py-8">
-                <h3>
-                  <a
-                    href="#"
-                    class="block mb-3 text-xl font-semibold truncate text-dark hover:text-primary dark:text-white"
-                    >Menikmati Secangkir Kopi</a
-                  >
-                </h3>
-                <p class="mb-6 text-base font-medium text-secondary">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Impedit, totam ipsum ea quam sequi velit sunt.
-                </p>
-                <a
-                  href="#"
-                  class="px-4 py-2 text-sm font-medium text-white rounded-lg bg-primary hover:opacity-80"
-                  >Baca Selengkapnya</a
-                >
-              </div>
+                  View
+                </h6></a
+              >
+              <span
+                class="absolute left-0 z-0 w-6 h-1 bg-[#f2cc8f] bottom-1"
+              ></span>
             </div>
           </div>
         </div>
       </div>
-    </section> -->
-  <!-- Blog Section End -->
+    </section>
+    <!-- Certificate Section End -->
 
-  <!-- Contact Section Start -->
-  <section id="contact" class="pb-32 pt-36 dark:bg-slate-800">
-    <div class="container">
-      <div class="w-full px-4">
-        <div class="max-w-xl mx-auto mb-16 text-center">
-          <h4 class="mb-2 text-lg font-semibold text-primary">Contact</h4>
-          <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl lg:text-5xl">
-            Get in Touch With Me
-          </h2>
-          <p class="font-medium text-md text-secondary md:text-lg">
-            I’d love to hear from you! Whether you have questions, feedback,
-            or just want to connect, feel free to reach out. You can contact
-            me via email or connect through social media. I’m always open to
-            discussing new opportunities or collaborations.
+    <!-- Footer Start -->
+    <footer class="pb-12 bg-dark">
+      <div class="container">
+        <div class="w-full pt-10 border-t border-slate-700">
+          <div class="flex items-center justify-center mb-5">
+            <!-- linkedin -->
+            <a
+              href="https://www.linkedin.com/in/meliusanorahariyanti/"
+              target="_blank"
+              class="flex items-center justify-center mr-3 border rounded-full w-9 h-9 border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+              ><svg
+                role="img"
+                width="20"
+                class="fill-current"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>LinkedIn</title>
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                />
+              </svg>
+            </a>
+            <!-- linkedin -->
+            <a
+              href="https://github.com/meliusa"
+              target="_blank"
+              class="flex items-center justify-center mr-3 border rounded-full w-9 h-9 border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+            >
+              <svg
+                role="img"
+                width="20"
+                class="fill-current"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>GitHub</title>
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                />
+              </svg>
+            </a>
+            <!-- linkedin -->
+            <a
+              href="https://www.instagram.com/meliusa26/"
+              target="_blank"
+              class="flex items-center justify-center mr-3 border rounded-full w-9 h-9 border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+            >
+              <svg
+                role="img"
+                width="20"
+                class="fill-current"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>Instagram</title>
+                <path
+                  d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"
+                />
+              </svg>
+            </a>
+            <!-- facebook -->
+            <a
+              href="https://www.facebook.com/meliusa/"
+              target="_blank"
+              class="flex items-center justify-center mr-3 border rounded-full w-9 h-9 border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+            >
+              <svg
+                role="img"
+                width="20"
+                class="fill-current"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>Facebook</title>
+                <path
+                  d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"
+                />
+              </svg>
+            </a>
+          </div>
+          <p class="text-xs font-medium text-center text-slate-500">
+            Created with <span class="text-pink-500">❤️</span> by
+            <a
+              href="https://instagram.com/meliusa26"
+              target="_blank"
+              class="font-bold text-primary"
+              >meliusanorahariyanti@gmail.com</a
+            >, used
+            <a
+              href="https://tailwindcss.com"
+              target="_blank"
+              class="font-bold text-sky-500"
+              >Tailwind CSS</a
+            >.
           </p>
         </div>
       </div>
+    </footer>
+    <!-- Footer End -->
 
-      <form id="contact-form" action="https://formspree.io/f/xwpedvjl" method="POST" onsubmit="resetForm()">
-        <div class="w-full lg:mx-auto lg:w-2/3">
-          <div class="w-full px-4 mb-8">
-            <label for="name" class="text-base font-bold text-primary">Name</label>
-            <input type="text" name="name" id="name" required autocomplete="off"
-              class="w-full p-3 rounded-md bg-slate-200 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" />
-          </div>
-          <div class="w-full px-4 mb-8">
-            <label for="email" class="text-base font-bold text-primary">Email</label>
-            <input type="email" name="email" id="email" required autocomplete="off"
-              class="w-full p-3 rounded-md bg-slate-200 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" />
-          </div>
-          <div class="w-full px-4 mb-8">
-            <label for="message" class="text-base font-bold text-primary">Message</label>
-            <textarea name="message" id="message" required autocomplete="off"
-              class="w-full h-32 p-3 rounded-md bg-slate-200 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"></textarea>
-          </div>
-          <div class="w-full px-4">
-            <button type="submit"
-              class="w-full px-8 py-3 text-base font-semibold text-white transition duration-500 rounded-full bg-primary hover:opacity-80 hover:shadow-lg">
-              Send
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </section>
-  <!-- Contact Section End -->
+    <!-- Back to top Start -->
+    <a
+      href="#home"
+      class="fixed bottom-10 right-10 z-[9999] hidden h-14 w-14 items-center justify-center rounded-full bg-primary p-4 hover:animate-pulse"
+      id="to-top"
+    >
+      <span class="block w-5 h-5 mt-2 rotate-45 border-t-2 border-l-2"></span>
+    </a>
+    <!-- Back to top End -->
 
-  <!-- Footer Start -->
-  <footer class="pt-24 pb-12 bg-dark">
-    <div class="container">
-      <div class="flex flex-wrap">
-        <div class="w-full px-4 mb-12 font-medium text-slate-300 md:w-1/3">
-          <h2 class="mb-5 text-4xl font-bold text-white">Meliusa.</h2>
-          <h3 class="mb-2 text-2xl font-bold">Get in Touch With Me</h3>
-          <p>meliusanorahariyanti@gmail.com</p>
-          <p>Malang - Batu City</p>
-        </div>
-        <div class="w-full px-4 mb-12 md:w-1/3">
-          <h3 class="mb-5 text-xl font-semibold text-white">Enthusiast</h3>
-          <ul class="text-slate-300">
-            <li>
-              <a href="#" class="inline-block mb-3 text-base hover:text-primary">Fullstack Developer</a>
-            </li>
-            <li>
-              <a href="#" class="inline-block mb-3 text-base hover:text-primary">Sistem Analyst</a>
-            </li>
-            <li>
-              <a href="#" class="inline-block mb-3 text-base hover:text-primary">Qualiy Assurance</a>
-            </li>
-          </ul>
-        </div>
-        <div class="w-full px-4 mb-12 md:w-1/3">
-          <h3 class="mb-5 text-xl font-semibold text-white">Link</h3>
-          <ul class="text-slate-300">
-            <li>
-              <a href="#home" class="inline-block mb-3 text-base hover:text-primary">Home</a>
-            </li>
-            <li>
-              <a href="#about" class="inline-block mb-3 text-base hover:text-primary">About</a>
-            </li>
-            <li>
-              <a href="#portfolio" class="inline-block mb-3 text-base hover:text-primary">Portfolios</a>
-            </li>
-            <li>
-              <a href="#clients" class="inline-block mb-3 text-base hover:text-primary">Clients</a>
-            </li>
-            <li>
-              <a href="#blog" class="inline-block mb-3 text-base hover:text-primary">Blogs</a>
-            </li>
-            <li>
-              <a href="#contact" class="inline-block mb-3 text-base hover:text-primary">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <script src="src/js/script.js"></script>
+    <!-- Load library from the CDN -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <!-- Setup and start animation! -->
+    <script>
+      var typed = new Typed("#auto-text", {
+        strings: [
+          "Fullstack Developer",
+          "Junior Web Developer",
+          "Mobile Developer",
+        ],
+        typeSpeed: 50,
+        loop: true,
+      });
 
-      <div class="w-full pt-10 border-t border-slate-700">
-        <div class="flex items-center justify-center mb-5">
-          <!-- linkedin -->
-          <a href="https://www.linkedin.com/in/meliusanorahariyanti/" target="_blank"
-            class="flex items-center justify-center mr-3 border rounded-full w-9 h-9 border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"><svg
-              role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <title>LinkedIn</title>
-              <path
-                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-            </svg>
-          </a>
-          <!-- linkedin -->
-          <a href="https://github.com/meliusa" target="_blank"
-            class="flex items-center justify-center mr-3 border rounded-full w-9 h-9 border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
-            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <title>GitHub</title>
-              <path
-                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-            </svg>
-          </a>
-          <!-- linkedin -->
-          <a href="https://www.instagram.com/meliusa26/" target="_blank"
-            class="flex items-center justify-center mr-3 border rounded-full w-9 h-9 border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
-            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <title>Instagram</title>
-              <path
-                d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077" />
-            </svg>
-          </a>
-          <!-- facebook -->
-          <a href="https://www.facebook.com/meliusa/" target="_blank"
-            class="flex items-center justify-center mr-3 border rounded-full w-9 h-9 border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
-            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <title>Facebook</title>
-              <path
-                d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z" />
-            </svg>
-          </a>
-        </div>
-        <p class="text-xs font-medium text-center text-slate-500">
-          Created with <span class="text-pink-500">❤️</span> by
-          <a href="https://instagram.com/meliusa26" target="_blank" class="font-bold text-primary">Meliusa Nora
-            Hariyanti</a>, used
-          <a href="https://tailwindcss.com" target="_blank" class="font-bold text-sky-500">Tailwind CSS</a>.
-        </p>
-      </div>
-    </div>
-  </footer>
-  <!-- Footer End -->
+      function resetForm() {
+        document.getElementById("contact-form").reset();
+      }
 
-  <!-- Back to top Start -->
-  <a href="#home"
-    class="fixed bottom-10 right-10 z-[9999] hidden h-14 w-14 items-center justify-center rounded-full bg-primary p-4 hover:animate-pulse"
-    id="to-top">
-    <span class="block w-5 h-5 mt-2 rotate-45 border-t-2 border-l-2"></span>
-  </a>
-  <!-- Back to top End -->
+      // Fungsi untuk memfilter gallery
+      function filterGallery(category) {
+        // Ambil semua elemen yang memiliki kelas 'filter-item'
+        const items = document.querySelectorAll(".filter-item");
 
-  <script src="src/js/script.js"></script>
-  <!-- Load library from the CDN -->
-  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-  <!-- Setup and start animation! -->
-  <script>
-    var typed = new Typed("#auto-text", {
-      strings: ["Fullstack Developer", "Junior Web Developer", "Mobile Developer"],
-      typeSpeed: 50,
-      loop: true,
-    });
-
-    function resetForm() {
-      document.getElementById('contact-form').reset();
-    }
-  </script>
-</body>
-
+        // Jika kategori adalah 'all', tampilkan semua elemen
+        if (category === "all") {
+          items.forEach((item) => {
+            item.style.display = "block";
+          });
+        } else {
+          // Sembunyikan semua item terlebih dahulu
+          items.forEach((item) => {
+            item.style.display = "none";
+          });
+          // Tampilkan item yang sesuai dengan kategori yang dipilih
+          document.querySelectorAll(`.filter-${category}`).forEach((item) => {
+            item.style.display = "block";
+          });
+        }
+      }
+    </script>
+  </body>
 </html>
